@@ -1,0 +1,7 @@
+import cludfm.FileManagementConfigs
+
+model {
+	FileManagementConfigs fileManagementConfigs
+}
+
+json tmpl.fileManagementConfigs(fileManagementConfigs)

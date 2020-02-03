@@ -1,0 +1,8 @@
+import cludfm.FileManagementConfigs
+
+model {
+	Iterable<FileManagementConfigs> fileManagementConfigsList
+}
+
+json tmpl.fileManagementConfigs(fileManagementConfigsList ?: [])
+

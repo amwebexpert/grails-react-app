@@ -1,0 +1,11 @@
+import cludfm.FileManagementConfigs
+
+model {
+	FileManagementConfigs fileManagementConfigs
+}
+
+json {
+	id fileManagementConfigs.id
+	name fileManagementConfigs.name
+	model "$fileManagementConfigs.id - $fileManagementConfigs.name == $fileManagementConfigs.value"
+}
