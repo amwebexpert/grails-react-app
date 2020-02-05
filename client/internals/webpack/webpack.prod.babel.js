@@ -1,6 +1,7 @@
 // Important modules this config uses
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const OfflinePlugin = require('offline-plugin');
 const { HashedModuleIdsPlugin } = require('webpack');
@@ -83,6 +84,22 @@ module.exports = require('./webpack.base.babel')({
       },
       inject: true,
     }),
+
+
+    // AdminLTE CSS dependencies
+    new AddAssetHtmlPlugin({ filepath: require.resolve('../../node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css') }),
+    new AddAssetHtmlPlugin({ filepath: require.resolve('../../node_modules/admin-lte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }),
+    new AddAssetHtmlPlugin({ filepath: require.resolve('../../node_modules/admin-lte/dist/css/adminlte.min.css') }),
+    new AddAssetHtmlPlugin({ filepath: require.resolve('../../node_modules/admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }),
+
+    // AdminLTE JS dependencies
+    // new AddAssetHtmlPlugin({ filepath: require.resolve('../../node_modules/admin-lte/plugins/jquery/jquery.min.js') }),
+    new AddAssetHtmlPlugin({ filepath: require.resolve('../../node_modules/admin-lte/plugins/jquery-ui/jquery-ui.min.js') }),
+    new AddAssetHtmlPlugin({ filepath: require.resolve('../../node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js') }),
+    new AddAssetHtmlPlugin({ filepath: require.resolve('../../node_modules/admin-lte/plugins/sparklines/sparkline.js') }),
+    new AddAssetHtmlPlugin({ filepath: require.resolve('../../node_modules/admin-lte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }),
+    new AddAssetHtmlPlugin({ filepath: require.resolve('../../node_modules/admin-lte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }),
+    new AddAssetHtmlPlugin({ filepath: require.resolve('../../node_modules/admin-lte/dist/js/adminlte.js') }),
 
     // Put it in the end to capture all the HtmlWebpackPlugin's
     // assets manipulations and do leak its manipulations to HtmlWebpackPlugin
