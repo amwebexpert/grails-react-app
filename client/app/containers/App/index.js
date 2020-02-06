@@ -7,7 +7,7 @@
  */
 
 import Footer from 'components/Footer';
-import Header from 'components/Header';
+import NavigationBar from 'components/NavigationBar';
 import FeaturePage from 'containers/FeaturePage/Loadable';
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
@@ -23,7 +23,7 @@ export default function App() {
         <meta name="description" content="Cloud Files Manager application" />
       </Helmet>
 
-      <Header />
+      <NavigationBar />
 
       <div class="content-wrapper">
 
