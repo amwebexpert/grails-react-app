@@ -38,14 +38,7 @@ module.exports = require('./webpack.base.babel')({
       template: 'app/index.html',
     }),
 
-    // AdminLTE CSS dependencies
-    new AddAssetHtmlPlugin({ filepath: require.resolve('../../node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css') }),
-    new AddAssetHtmlPlugin({ filepath: require.resolve('../../node_modules/admin-lte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }),
-    new AddAssetHtmlPlugin({ filepath: require.resolve('../../node_modules/admin-lte/dist/css/adminlte.min.css') }),
-    new AddAssetHtmlPlugin({ filepath: require.resolve('../../node_modules/admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }),
-
     // AdminLTE JS dependencies
-    // new AddAssetHtmlPlugin({ filepath: require.resolve('../../node_modules/admin-lte/plugins/jquery/jquery.min.js') }),
     new AddAssetHtmlPlugin({ filepath: require.resolve('../../node_modules/admin-lte/plugins/jquery-ui/jquery-ui.min.js') }),
     new AddAssetHtmlPlugin({ filepath: require.resolve('../../node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js') }),
     new AddAssetHtmlPlugin({ filepath: require.resolve('../../node_modules/admin-lte/plugins/sparklines/sparkline.js') }),

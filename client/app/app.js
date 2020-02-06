@@ -9,6 +9,12 @@
 import '@babel/polyfill';
 
 // Import all the third party stuff
+import '!!style-loader!css-loader!../node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css';
+import '!!style-loader!css-loader!../node_modules/admin-lte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css';
+import '!!style-loader!css-loader!../node_modules/admin-lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css';
+import '!!style-loader!css-loader!../node_modules/admin-lte/dist/css/adminlte.min.css';
+import '!!style-loader!css-loader!../node_modules/admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
