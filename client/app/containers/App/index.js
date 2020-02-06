@@ -31,19 +31,20 @@ const AppWrapper = styled.div`
 export default function App() {
   return (
     <AppWrapper>
-      <Helmet
-        titleTemplate="%s - Cloud Files Manager"
-        defaultTitle="Cloud Files Manager"
-      >
+      <Helmet titleTemplate="%s - Cloud Files Manager" defaultTitle="Cloud Files Manager">
         <meta name="description" content="Cloud Files Manager application" />
       </Helmet>
+
       <Header />
+
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/features" component={FeaturePage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
+
       <Footer />
+
       <GlobalStyle />
     </AppWrapper>
   );
