@@ -32,10 +32,10 @@ export default function App() {
   return (
     <AppWrapper>
       <Helmet
-        titleTemplate="%s - React.js Boilerplate"
-        defaultTitle="React.js Boilerplate"
+        titleTemplate="%s - Cloud Files Manager"
+        defaultTitle="Cloud Files Manager"
       >
-        <meta name="description" content="A React.js Boilerplate application" />
+        <meta name="description" content="Cloud Files Manager application" />
       </Helmet>
       <Header />
       <Switch>
