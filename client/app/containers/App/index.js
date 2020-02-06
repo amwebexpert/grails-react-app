@@ -14,6 +14,7 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Route, Switch } from 'react-router-dom';
+import Sidebar from '../../components/Sidebar';
 
 
 export default function App() {
@@ -25,16 +26,18 @@ export default function App() {
 
       <NavigationBar />
 
-      <div class="content-wrapper">
+      <Sidebar />
 
-        <div class="content-header">
-          <div class="container-fluid">
+      <div className="content-wrapper">
+
+        <div className="content-header">
+          <div className="container-fluid">
             <p>Page title ...</p>
           </div>
         </div>
 
-        <section class="content">
-          <div class="container-fluid">
+        <section className="content">
+          <div className="container-fluid">
             <Switch>
               <Route exact path="/" component={HomePage} />
               <Route path="/features" component={FeaturePage} />
