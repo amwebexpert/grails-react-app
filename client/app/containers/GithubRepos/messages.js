@@ -1,11 +1,11 @@
 /*
- * HomePage Messages
+ * GithubRepos Messages
  *
- * This contains all the text for the HomePage component.
+ * This contains all the text for the GithubRepos component.
  */
 import { defineMessages } from 'react-intl';
 
-export const scope = 'boilerplate.containers.HomePage';
+export const scope = 'boilerplate.containers.GithubRepos';
 
 export default defineMessages({
   startProjectHeader: {

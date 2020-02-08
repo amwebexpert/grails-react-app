@@ -1,5 +1,5 @@
 /**
- * Test the HomePage
+ * Test the GithubRepos
  */
 
 import React from 'react';
@@ -8,12 +8,12 @@ import { IntlProvider } from 'react-intl';
 import { Provider } from 'react-redux';
 import { browserHistory } from 'react-router-dom';
 
-import { HomePage, mapDispatchToProps } from '../index';
+import { GithubRepos, mapDispatchToProps } from '../index';
 import { changeUsername } from '../actions';
 import { loadRepos } from '../../App/actions';
 import configureStore from '../../../configureStore';
 
-describe('<HomePage />', () => {
+describe('<GithubRepos />', () => {
   let store;
 
   beforeAll(() => {
@@ -26,7 +26,7 @@ describe('<HomePage />', () => {
     } = render(
       <Provider store={store}>
         <IntlProvider locale="en">
-          <HomePage loading={false} error={false} repos={[]} />
+          <GithubRepos loading={false} error={false} repos={[]} />
         </IntlProvider>
       </Provider>,
     );
@@ -38,7 +38,7 @@ describe('<HomePage />', () => {
     render(
       <Provider store={store}>
         <IntlProvider locale="en">
-          <HomePage
+          <GithubRepos
             username="Not Empty"
             onChangeUsername={() => {}}
             onSubmitForm={submitSpy}
@@ -54,7 +54,7 @@ describe('<HomePage />', () => {
     render(
       <Provider store={store}>
         <IntlProvider locale="en">
-          <HomePage onChangeUsername={() => {}} onSubmitForm={submitSpy} />
+          <GithubRepos onChangeUsername={() => {}} onSubmitForm={submitSpy} />
         </IntlProvider>
       </Provider>,
     );
@@ -66,7 +66,7 @@ describe('<HomePage />', () => {
     render(
       <Provider store={store}>
         <IntlProvider locale="en">
-          <HomePage
+          <GithubRepos
             username=""
             onChangeUsername={() => {}}
             onSubmitForm={submitSpy}

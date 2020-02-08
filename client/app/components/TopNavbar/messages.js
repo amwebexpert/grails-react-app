@@ -1,7 +1,7 @@
 /*
- * HomePage Messages
+ * GithubRepos Messages
  *
- * This contains all the text for the HomePage component.
+ * This contains all the text for the GithubRepos component.
  */
 import { defineMessages } from 'react-intl';
 

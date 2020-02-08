@@ -1,5 +1,5 @@
 /*
- * HomePage
+ * GithubRepos
  *
  * This is the first thing users see of our App, at the '/' route
  */
@@ -35,7 +35,7 @@ import saga from './saga';
 
 const key = 'home';
 
-export function HomePage({
+export function GithubRepos({
   username,
   loading,
   error,
@@ -101,7 +101,7 @@ export function HomePage({
   );
 }
 
-HomePage.propTypes = {
+GithubRepos.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
@@ -135,4 +135,4 @@ const withConnect = connect(
 export default compose(
   withConnect,
   memo,
-)(HomePage);
+)(GithubRepos);

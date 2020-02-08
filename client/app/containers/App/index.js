@@ -8,7 +8,7 @@
 
 import Footer from 'components/Footer';
 import FeaturePage from 'containers/FeaturePage/Loadable';
-import HomePage from 'containers/GithubRepos/Loadable';
+import GithubRepos from 'containers/GithubRepos/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import React from 'react';
 import { Helmet } from 'react-helmet';
@@ -41,7 +41,7 @@ export default function App() {
         <section className="content">
           <div className="container-fluid">
             <Switch>
-              <Route exact path="/" component={HomePage} />
+              <Route exact path="/" component={GithubRepos} />
               <Route path="/features" component={FeaturePage} />
               <Route path="" component={NotFoundPage} />
             </Switch>
