@@ -5,17 +5,19 @@
  */
 
 import React from "react";
-// import PropTypes from 'prop-types';
-// import styled from 'styled-components';
-
-import { FormattedMessage } from "react-intl";
-import messages from "./messages";
 
 function TopNavbarSearchForm() {
   return (
-    <div>
-      <FormattedMessage {...messages.header} />
-    </div>
+    <form className="form-inline ml-3">
+      <div className="input-group input-group-sm">
+        <input className="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search" />
+        <div className="input-group-append">
+          <button className="btn btn-navbar" type="submit">
+            <i className="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
   );
 }
 
