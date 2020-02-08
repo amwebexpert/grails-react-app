@@ -11,6 +11,7 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { useInjectReducer } from "utils/injectReducer";
 import { useInjectSaga } from "utils/injectSaga";
+import LoadingIndicator from '../../components/LoadingIndicator/index';
 import { loadAboutInfo } from "./actions";
 import messages from "./messages";
 import reducer from "./reducer";
@@ -26,6 +27,14 @@ function About(props) {
   useEffect(() => {
     props.fetchAboutInfo();
   }, []);
+
+  if (props.loading) {
+    return <LoadingIndicator />;
+  }
+
+  if (props.error) {
+    return <p>Something went wrong, please try again!</p>;
+  }
 
   return (
     <div>

@@ -35,7 +35,7 @@ export default function App() {
 
         <div className="content-header">
           <div className="container-fluid">
-            <p>Page title ...</p>
+            <h1>Cloud File Manager Demo App...</h1>
           </div>
         </div>
 

@@ -1,7 +1,7 @@
 /**
  * Gets the App About info from backend server
  */
-import { call, put, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest, delay } from 'redux-saga/effects';
 import request from 'utils/request';
 import { aboutInfoLoaded, aboutInfoLoadingError } from './actions';
 import { LOAD_ABOUT_INFO } from './constants';
@@ -13,6 +13,7 @@ export function* getAboutInfo() {
   try {
     // Call our request helper (see 'utils/request')
     const aboutInfo = yield call(request, requestURL);
+    yield delay(1000);
     yield put(aboutInfoLoaded(aboutInfo));
   } catch (err) {
     yield put(aboutInfoLoadingError(err));
