@@ -14,6 +14,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Route, Switch } from 'react-router-dom';
 import AsideSidebar from '../../components/AsideSidebar/index';
+import Home from '../../components/Home/index';
 import Sidebar from '../../components/Sidebar';
 import TopNavbar from '../../components/TopNavbar/index';
 
@@ -41,7 +42,8 @@ export default function App() {
         <section className="content">
           <div className="container-fluid">
             <Switch>
-              <Route exact path="/" component={GithubRepos} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/repos" component={GithubRepos} />
               <Route path="/features" component={FeaturePage} />
               <Route path="" component={NotFoundPage} />
             </Switch>

@@ -20,9 +20,6 @@ function TopNavbarLeft() {
       <li className="nav-item d-none d-sm-inline-block">
         <Link to="/" className="nav-link"><FormattedMessage {...messages.home} /></Link>
       </li>
-      <li className="nav-item d-none d-sm-inline-block">
-        <Link to="/features" className="nav-link"><FormattedMessage {...messages.features} /></Link>
-      </li>
     </ul>
   );
 }

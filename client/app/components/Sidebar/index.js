@@ -30,7 +30,7 @@ function Sidebar() {
               <ul className="nav nav-treeview">
                 <li className="nav-item">
                   { /** We can add 'active' class here if required like so: nav-link active */}
-                  <Link to="/" className="nav-link">
+                  <Link to="/repos" className="nav-link">
                     <i className="far fa-circle nav-icon"></i>
                     <p>Github fetch demo</p>
                   </Link>
@@ -50,12 +50,6 @@ function Sidebar() {
                 <p>Another menu  <i className="right fas fa-angle-left"></i></p>
               </a>
               <ul className="nav nav-treeview">
-                <li className="nav-item">
-                  <Link to="/" className="nav-link">
-                    <i className="far fa-circle nav-icon"></i>
-                    <p>Github fetch demo</p>
-                  </Link>
-                </li>
                 <li className="nav-item">
                   <Link to="/features" className="nav-link">
                     <i className="far fa-circle nav-icon"></i>
