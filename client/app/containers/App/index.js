@@ -8,7 +8,7 @@
 
 import Footer from 'components/Footer';
 import FeaturePage from 'containers/FeaturePage/Loadable';
-import HomePage from 'containers/HomePage/Loadable';
+import HomePage from 'containers/GithubRepos/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import React from 'react';
 import { Helmet } from 'react-helmet';
