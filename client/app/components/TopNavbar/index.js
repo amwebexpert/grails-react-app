@@ -3,7 +3,7 @@ import TopNavbarLeft from './TopNavbarLeft/index';
 import TopNavbarRight from './TopNavbarRight/index';
 import TopNavbarSearchForm from './TopNavbarSearchForm/index';
 
-function Header() {
+function TopNavbar() {
   return (
     <nav className="main-header navbar navbar-expand navbar-white navbar-light">
 
@@ -17,5 +17,5 @@ function Header() {
   );
 }
 
-export default Header;
+export default TopNavbar;
 

@@ -7,7 +7,6 @@
  */
 
 import Footer from 'components/Footer';
-import NavigationBar from 'components/NavigationBar';
 import FeaturePage from 'containers/FeaturePage/Loadable';
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
@@ -16,6 +15,7 @@ import { Helmet } from 'react-helmet';
 import { Route, Switch } from 'react-router-dom';
 import AsideSidebar from '../../components/AsideSidebar/index';
 import Sidebar from '../../components/Sidebar';
+import TopNavbar from '../../components/TopNavbar/index';
 
 
 export default function App() {
@@ -26,7 +26,7 @@ export default function App() {
         <meta name="description" content="Cloud Files Manager application" />
       </Helmet>
 
-      <NavigationBar />
+      <TopNavbar />
 
       <Sidebar />
 
