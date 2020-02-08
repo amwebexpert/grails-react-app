@@ -51,9 +51,9 @@ function Sidebar() {
               </a>
               <ul className="nav nav-treeview">
                 <li className="nav-item">
-                  <Link to="/features" className="nav-link">
+                  <Link to="/about" className="nav-link">
                     <i className="far fa-circle nav-icon"></i>
-                    <p>Features</p>
+                    <p>About this app...</p>
                   </Link>
                 </li>
               </ul>

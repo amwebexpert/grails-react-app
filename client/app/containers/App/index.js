@@ -17,7 +17,7 @@ import AsideSidebar from '../../components/AsideSidebar/index';
 import Home from '../../components/Home/index';
 import Sidebar from '../../components/Sidebar';
 import TopNavbar from '../../components/TopNavbar/index';
-
+import About from '../About/Loadable';
 
 export default function App() {
   return (
@@ -43,6 +43,7 @@ export default function App() {
           <div className="container-fluid">
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route exact path="/about" component={About} />
               <Route exact path="/repos" component={GithubRepos} />
               <Route path="/features" component={FeaturePage} />
               <Route path="" component={NotFoundPage} />
