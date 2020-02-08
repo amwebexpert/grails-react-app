@@ -14,12 +14,14 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Route, Switch } from 'react-router-dom';
+import AsideSidebar from '../../components/AsideSidebar/index';
 import Sidebar from '../../components/Sidebar';
 
 
 export default function App() {
   return (
-    <div>
+    <div className="wrapper">
+
       <Helmet titleTemplate="%s - Cloud Files Manager" defaultTitle="Cloud Files Manager">
         <meta name="description" content="Cloud Files Manager application" />
       </Helmet>
@@ -48,6 +50,8 @@ export default function App() {
       </div>
 
       <Footer />
+
+      <AsideSidebar />
 
     </div>
   );
