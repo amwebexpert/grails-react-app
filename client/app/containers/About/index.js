@@ -9,6 +9,7 @@ import React, { useEffect } from 'react';
 import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+import styled from 'styled-components';
 import { useInjectReducer } from "utils/injectReducer";
 import { useInjectSaga } from "utils/injectSaga";
 import LoadingIndicator from '../../components/LoadingIndicator/index';
@@ -18,6 +19,14 @@ import messages from "./messages";
 import reducer from "./reducer";
 import saga from "./saga";
 import { makeSelectAboutInfo, makeSelectError, makeSelectLoading } from "./selectors";
+
+const RowAbout = styled.div`
+  margin-top: 50px;
+`;
+
+const DivAbout = styled.div`
+  margin-left: 80px;
+`;
 
 const key = 'about';
 
@@ -40,15 +49,17 @@ function About(props) {
   const info = props.info;
 
   return (
-    <div className="row">
+    <RowAbout className="row">
       <div className="col-md-6 offset-md-3">
         <div className="card card-widget widget-user-2">
           <div className="widget-user-header bg-warning">
             <div className="widget-user-image">
               <img src={Logo} alt="Cloud File Manager" />
             </div>
-            <h3>Cloud File Manager App</h3>
-            <h5><a href="https://adminlte.io/" target="_blank" rel="noopener noreferrer"><FormattedMessage {...messages.poweredBy} /></a></h5>
+            <DivAbout>
+              <h3>Cloud File Manager App</h3>
+              <h5><a href="https://adminlte.io/" target="_blank" rel="noopener noreferrer"><FormattedMessage {...messages.poweredBy} /></a></h5>
+            </DivAbout>
           </div>
           <div className="card-footer p-0">
             <ul className="nav flex-column">
@@ -63,7 +74,7 @@ function About(props) {
           </div>
         </div>
       </div>
-    </div>
+    </RowAbout>
   );
 }
 
