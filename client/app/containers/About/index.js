@@ -58,7 +58,7 @@ function About(props) {
             </div>
             <DivAbout>
               <h3>Cloud File Manager App</h3>
-              <h5><a href="https://adminlte.io/" target="_blank" rel="noopener noreferrer"><FormattedMessage {...messages.poweredBy} /></a></h5>
+              <p><a href="https://adminlte.io/" target="_blank" rel="noopener noreferrer"><FormattedMessage {...messages.poweredBy} /></a></p>
             </DivAbout>
           </div>
           <div className="card-footer p-0">
