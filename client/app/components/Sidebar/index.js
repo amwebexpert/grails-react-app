@@ -7,6 +7,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import Logo from '../../images/icon-512x512.png';
+import { FormattedMessage } from 'react-intl';
+import messages from "./messages";
 
 function Sidebar() {
   return (
@@ -52,8 +54,8 @@ function Sidebar() {
               <ul className="nav nav-treeview">
                 <li className="nav-item">
                   <Link to="/about" className="nav-link">
-                    <i className="far fa-circle nav-icon"></i>
-                    <p>About this app...</p>
+                    <i className="fas fa-info-circle nav-icon"></i>
+                    <p><FormattedMessage {...messages.about} /></p>
                   </Link>
                 </li>
               </ul>

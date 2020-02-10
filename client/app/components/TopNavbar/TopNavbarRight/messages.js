@@ -12,5 +12,9 @@ export default defineMessages({
   header: {
     id: `${scope}.header`,
     defaultMessage: "This is the TopNavbarRight component!"
+  },
+  about: {
+    id: `${scope}.about`,
+    defaultMessage: "About this application..."
   }
 });

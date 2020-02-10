@@ -7,8 +7,8 @@
 import React from "react";
 // import PropTypes from 'prop-types';
 // import styled from 'styled-components';
-
 import { FormattedMessage } from "react-intl";
+import { Link } from 'react-router-dom';
 import messages from "./messages";
 
 function TopNavbarRight() {
@@ -30,6 +30,10 @@ function TopNavbarRight() {
           <div className="dropdown-divider"></div>
           <a href="#" className="dropdown-item dropdown-footer"><FormattedMessage {...messages.header} /></a>
         </div>
+      </li>
+
+      <li className="nav-item">
+        <Link to="/about" className="nav-link"><i className="fas fa-info-circle"></i></Link>
       </li>
 
       <li className="nav-item">

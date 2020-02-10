@@ -12,5 +12,9 @@ export default defineMessages({
   header: {
     id: `${scope}.header`,
     defaultMessage: "This is the Sidebar component!"
+  },
+  about: {
+    id: `${scope}.about`,
+    defaultMessage: "About this application..."
   }
 });
