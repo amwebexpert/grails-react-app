@@ -10,7 +10,7 @@ import Logo from '../../images/icon-512x512.png';
 
 function Sidebar() {
   return (
-    <aside className="main-sidebar sidebar-dark-primary elevation-4">
+    <aside className="main-sidebar sidebar-dark-yellow elevation-4">
 
       <Link to="/" className="brand-link">
         <img src={Logo} alt="Cloud Files Manager" className="brand-image img-circle elevation-3" />
@@ -23,14 +23,14 @@ function Sidebar() {
 
             <li className="nav-item has-treeview menu-open">
               { /** We can add 'active' class here if required like so: nav-link active */}
-              <a href="#" className="nav-link">
+              <a href="#" className="nav-link active">
                 <i className="nav-icon fas fa-tachometer-alt"></i>
                 <p>React Boilerplate  <i className="right fas fa-angle-left"></i></p>
               </a>
               <ul className="nav nav-treeview">
                 <li className="nav-item">
                   { /** We can add 'active' class here if required like so: nav-link active */}
-                  <Link to="/repos" className="nav-link">
+                  <Link to="/repos" className="nav-link active">
                     <i className="far fa-circle nav-icon"></i>
                     <p>Github fetch demo</p>
                   </Link>

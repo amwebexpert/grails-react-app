@@ -9,8 +9,8 @@ import { defineMessages } from "react-intl";
 export const scope = "app.containers.About";
 
 export default defineMessages({
-  header: {
-    id: `${scope}.header`,
-    defaultMessage: "This is the About container!"
+  poweredBy: {
+    id: `${scope}.poweredBy`,
+    defaultMessage: "Powered by AdminLTE"
   }
 });

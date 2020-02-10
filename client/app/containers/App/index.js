@@ -35,7 +35,7 @@ export default function App() {
 
         <div className="content-header">
           <div className="container-fluid">
-            <h1>Cloud File Manager Demo App...</h1>
+            { /** Here we can add h1 on left side and bread crumb on right side */}
           </div>
         </div>
 
