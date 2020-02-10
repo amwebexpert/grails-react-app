@@ -24,8 +24,17 @@ const RowAbout = styled.div`
   margin-top: 50px;
 `;
 
+const UlAbout = styled.ul`
+  margin-top: 10px;
+`;
+
 const DivAbout = styled.div`
   margin-left: 80px;
+`;
+
+const SpanVersion = styled.span`
+  padding-top: 0;
+  padding-bottom: 0;
 `;
 
 const key = 'about';
@@ -49,32 +58,52 @@ function About(props) {
   const info = props.info;
 
   return (
-    <RowAbout className="row">
-      <div className="col-md-6 offset-md-3">
-        <div className="card card-widget widget-user-2">
-          <div className="widget-user-header bg-warning">
-            <div className="widget-user-image">
-              <img src={Logo} alt="Cloud File Manager" />
+    <div>
+      <RowAbout className="row">
+        <div className="col-md-4 offset-md-4">
+          <div className="card card-widget widget-user-2">
+            <div className="widget-user-header bg-warning">
+              <div className="widget-user-image">
+                <img src={Logo} alt="Cloud File Manager" />
+              </div>
+              <DivAbout>
+                <h3>Cloud File Manager {info.appversion}</h3>
+                <p><a href="https://adminlte.io/" target="_blank" rel="noopener noreferrer"><FormattedMessage {...messages.poweredBy} /></a></p>
+              </DivAbout>
             </div>
-            <DivAbout>
-              <h3>Cloud File Manager App</h3>
-              <p><a href="https://adminlte.io/" target="_blank" rel="noopener noreferrer"><FormattedMessage {...messages.poweredBy} /></a></p>
-            </DivAbout>
-          </div>
-          <div className="card-footer p-0">
-            <ul className="nav flex-column">
-              <li className="nav-item">
-                <span className="nav-link">Backend <span className="float-right badge bg-secondary">{info.appversion}</span></span>
-                <span className="nav-link">Grails <span className="float-right badge bg-secondary">{info.grailsversion}</span></span>
-                <span className="nav-link">JVM <span className="float-right badge bg-secondary">{info.jvmversion}</span></span>
-                <span className="nav-link">Environment <span className="float-right badge bg-secondary">{info.environment}</span></span>
-                <span className="nav-link">Profile <span className="float-right badge bg-secondary">{info.appprofile}</span></span>
-              </li>
-            </ul>
+            <div className="card-footer p-0">
+              <UlAbout className="nav flex-column">
+                <li className="nav-item">
+                  <SpanVersion className="nav-link">JVM <span className="float-right badge bg-secondary">{info.jvmversion}</span></SpanVersion>
+                  <SpanVersion className="nav-link">Environment <span className="float-right badge bg-secondary">{info.environment}</span></SpanVersion>
+                  <SpanVersion className="nav-link">Profile <span className="float-right badge bg-secondary">{info.appprofile}</span></SpanVersion>
+                  <SpanVersion className="nav-link">Grails <span className="float-right badge bg-secondary">{info.grailsversion}</span></SpanVersion>
+                </li>
+              </UlAbout>
+            </div>
           </div>
         </div>
-      </div>
-    </RowAbout>
+      </RowAbout>
+
+      <RowAbout className="row">
+        <div className="col-md-4 offset-md-4">
+          <div className="card card-widget widget-user-2">
+            <div className="widget-user-header">
+              <h3>Backend plugins</h3>
+            </div>
+            <div className="card-footer p-0">
+              <UlAbout className="nav flex-column">
+                <li className="nav-item">
+                  {info.plugins.map(plugin => (
+                    <SpanVersion className="nav-link">{plugin.name} <span className="float-right badge bg-secondary">{plugin.version}</span></SpanVersion>
+                  ))}
+                </li>
+              </UlAbout>
+            </div>
+          </div>
+        </div>
+      </RowAbout>
+    </div>
   );
 }
 
