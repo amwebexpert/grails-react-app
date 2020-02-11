@@ -19,6 +19,7 @@ import messages from "./messages";
 import reducer from "./reducer";
 import saga from "./saga";
 import { makeSelectAboutInfo, makeSelectError, makeSelectLoading } from "./selectors";
+import AboutPlugins from '../../components/AboutPlugins/index';
 
 const RowAbout = styled.div`
   margin-top: 50px;
@@ -56,54 +57,38 @@ function About(props) {
   }
 
   const info = props.info;
+  const plugins = props.info.plugins;
 
   return (
-    <div>
-      <RowAbout className="row">
-        <div className="col-md-4 offset-md-4">
-          <div className="card card-widget widget-user-2">
-            <div className="widget-user-header bg-warning">
-              <div className="widget-user-image">
-                <img src={Logo} alt="Cloud File Manager" />
-              </div>
-              <DivAbout>
-                <h3>Cloud File Manager {info.appversion}</h3>
-                <p><a href="https://adminlte.io/" target="_blank" rel="noopener noreferrer"><FormattedMessage {...messages.poweredBy} /></a></p>
-              </DivAbout>
-            </div>
-            <div className="card-footer p-0">
-              <UlAbout className="nav flex-column">
-                <li className="nav-item">
-                  <SpanVersion className="nav-link">JVM <span className="float-right badge bg-secondary">{info.jvmversion}</span></SpanVersion>
-                  <SpanVersion className="nav-link">Environment <span className="float-right badge bg-secondary">{info.environment}</span></SpanVersion>
-                  <SpanVersion className="nav-link">Profile <span className="float-right badge bg-secondary">{info.appprofile}</span></SpanVersion>
-                  <SpanVersion className="nav-link">Grails <span className="float-right badge bg-secondary">{info.grailsversion}</span></SpanVersion>
-                </li>
-              </UlAbout>
-            </div>
-          </div>
-        </div>
-      </RowAbout>
+    <RowAbout className="row">
 
-      <RowAbout className="row">
-        <div className="col-md-4 offset-md-4">
-          <div className="card card-widget widget-user-2">
-            <div className="widget-user-header">
-              <h3>Backend plugins</h3>
+      <div className="col-md-4 offset-md-2">
+        <div className="card card-widget widget-user-2">
+          <div className="widget-user-header bg-warning">
+            <div className="widget-user-image">
+              <img src={Logo} alt="Cloud File Manager" title="Cloud File Manager" />
             </div>
-            <div className="card-footer p-0">
-              <UlAbout className="nav flex-column">
-                <li className="nav-item">
-                  {info.plugins.map(plugin => (
-                    <SpanVersion className="nav-link">{plugin.name} <span className="float-right badge bg-secondary">{plugin.version}</span></SpanVersion>
-                  ))}
-                </li>
-              </UlAbout>
-            </div>
+            <DivAbout>
+              <h3>{info.environment}</h3>
+              <p><a href="https://adminlte.io/" target="_blank" rel="noopener noreferrer"><FormattedMessage {...messages.poweredBy} /></a></p>
+            </DivAbout>
+          </div>
+          <div className="card-footer p-0">
+            <UlAbout className="nav flex-column">
+              <li className="nav-item">
+                <SpanVersion className="nav-link">Cloud File Manager App <span className="float-right badge bg-secondary">{info.appversion}</span></SpanVersion>
+                <SpanVersion className="nav-link">JVM <span className="float-right badge bg-secondary">{info.jvmversion}</span></SpanVersion>
+                <SpanVersion className="nav-link">Grails <span className="float-right badge bg-secondary">{info.grailsversion}</span></SpanVersion>
+                <SpanVersion className="nav-link">Profile <span className="float-right badge bg-secondary">{info.appprofile}</span></SpanVersion>
+              </li>
+            </UlAbout>
           </div>
         </div>
-      </RowAbout>
-    </div>
+      </div>
+
+      <AboutPlugins plugins={plugins} />
+
+    </RowAbout>
   );
 }
 
