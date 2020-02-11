@@ -4,7 +4,13 @@
  *
  */
 
-import { LOAD_ABOUT_ERROR, LOAD_ABOUT_INFO, LOAD_ABOUT_SUCCESS } from './constants';
+import { LOAD_ABOUT_ERROR, LOAD_ABOUT_INFO, LOAD_ABOUT_SUCCESS, CLEAR_ABOUT_INFO } from './constants';
+
+export function clearAboutInfo() {
+  return {
+    type: CLEAR_ABOUT_INFO,
+  };
+}
 
 export function loadAboutInfo() {
   return {

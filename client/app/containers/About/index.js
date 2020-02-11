@@ -20,6 +20,7 @@ import reducer from "./reducer";
 import saga from "./saga";
 import { makeSelectAboutInfo, makeSelectError, makeSelectLoading } from "./selectors";
 import AboutPlugins from '../../components/AboutPlugins/index';
+import { clearAboutInfo } from './actions';
 
 const RowAbout = styled.div`
   margin-top: 50px;
@@ -46,6 +47,10 @@ function About(props) {
 
   useEffect(() => {
     props.fetchAboutInfo();
+
+    return () => {
+      props.clearAboutInfo();
+    }
   }, []);
 
   if (props.loading) {
@@ -97,6 +102,7 @@ About.propTypes = {
   error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   info: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   fetchAboutInfo: PropTypes.func,
+  clearAboutInfo: PropTypes.func,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -107,7 +113,8 @@ const mapStateToProps = createStructuredSelector({
 
 export function mapDispatchToProps(dispatch) {
   return {
-    fetchAboutInfo: () => dispatch(loadAboutInfo())
+    fetchAboutInfo: () => dispatch(loadAboutInfo()),
+    clearAboutInfo: () => dispatch(clearAboutInfo()),
   };
 }
 

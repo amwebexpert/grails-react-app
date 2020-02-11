@@ -35,7 +35,7 @@ function AboutPlugins(props) {
     <div className="col-md-4">
       <div className="card card-widget widget-user-2">
         <div className="widget-user-header bg-warning">
-          <h3><FormattedMessage {...messages.header} /></h3>
+          <h3><i className="fas fa-info-circle"></i> <FormattedMessage {...messages.header} /></h3>
         </div>
         <div className="card-footer p-0">
           <UlAbout className="nav flex-column">

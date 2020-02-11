@@ -4,7 +4,7 @@
  *
  */
 import produce from "immer";
-import { LOAD_ABOUT_INFO, LOAD_ABOUT_SUCCESS, LOAD_ABOUT_ERROR } from './constants';
+import { CLEAR_ABOUT_INFO, LOAD_ABOUT_ERROR, LOAD_ABOUT_INFO, LOAD_ABOUT_SUCCESS } from './constants';
 
 export const initialState = {
   loading: false,
@@ -18,6 +18,12 @@ const aboutReducer = (state = initialState, action) =>
     switch (action.type) {
       case LOAD_ABOUT_INFO:
         draft.loading = true;
+        draft.error = false;
+        draft.info = {};
+        break;
+
+      case CLEAR_ABOUT_INFO:
+        draft.loading = false;
         draft.error = false;
         draft.info = {};
         break;
