@@ -9,7 +9,7 @@ import { CLEAR_ABOUT_INFO, LOAD_ABOUT_ERROR, LOAD_ABOUT_INFO, LOAD_ABOUT_SUCCESS
 export const initialState = {
   loading: false,
   error: false,
-  info: {}
+  info: null
 };
 
 /* eslint-disable default-case, no-param-reassign */
@@ -19,13 +19,13 @@ const aboutReducer = (state = initialState, action) =>
       case LOAD_ABOUT_INFO:
         draft.loading = true;
         draft.error = false;
-        draft.info = {};
+        draft.info = null;
         break;
 
       case CLEAR_ABOUT_INFO:
-        draft.loading = false;
+        draft.loading = true;
         draft.error = false;
-        draft.info = {};
+        draft.info = null;
         break;
 
       case LOAD_ABOUT_SUCCESS:

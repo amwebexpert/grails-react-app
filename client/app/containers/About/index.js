@@ -12,15 +12,14 @@ import { createStructuredSelector } from "reselect";
 import styled from 'styled-components';
 import { useInjectReducer } from "utils/injectReducer";
 import { useInjectSaga } from "utils/injectSaga";
+import AboutPlugins from '../../components/AboutPlugins/index';
 import LoadingIndicator from '../../components/LoadingIndicator/index';
 import Logo from '../../images/icon-512x512.png';
-import { loadAboutInfo } from "./actions";
+import { clearAboutInfo, loadAboutInfo } from "./actions";
 import messages from "./messages";
 import reducer from "./reducer";
 import saga from "./saga";
 import { makeSelectAboutInfo, makeSelectError, makeSelectLoading } from "./selectors";
-import AboutPlugins from '../../components/AboutPlugins/index';
-import { clearAboutInfo } from './actions';
 
 const RowAbout = styled.div`
   margin-top: 50px;
@@ -48,6 +47,8 @@ function About(props) {
   useEffect(() => {
     props.fetchAboutInfo();
 
+    // We want to clear 'about info' when we leave the component so the
+    // next time component is displayed it will force a server API call again
     return () => {
       props.clearAboutInfo();
     }
@@ -59,6 +60,10 @@ function About(props) {
 
   if (props.error) {
     return <p>Something went wrong, please try again!</p>;
+  }
+
+  if (!props.info) {
+    return null;
   }
 
   const info = props.info;
