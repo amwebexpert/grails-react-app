@@ -87,7 +87,7 @@ function About(props) {
             <UlAbout className="nav flex-column">
               <li className="nav-item">
                 <SpanVersion className="nav-link">Cloud File Manager App <span className="float-right badge bg-secondary">{info.appversion}</span></SpanVersion>
-                <SpanVersion className="nav-link">JVM <span className="float-right badge bg-secondary">{info.jvmversion}</span></SpanVersion>
+                <SpanVersion className="nav-link">JVM ({info.os})<span className="float-right badge bg-secondary">{info.jvmversion}</span></SpanVersion>
                 <SpanVersion className="nav-link">Grails <span className="float-right badge bg-secondary">{info.grailsversion}</span></SpanVersion>
                 <SpanVersion className="nav-link">Profile <span className="float-right badge bg-secondary">{info.appprofile}</span></SpanVersion>
               </li>

@@ -5,10 +5,12 @@ import grails.plugins.*
 
 class ApplicationController implements PluginManagerAware {
 
+    static String osName = System.getProperty("os.name");
+
     GrailsApplication grailsApplication
     GrailsPluginManager pluginManager
 
     def index() {
-        [grailsApplication: grailsApplication, pluginManager: pluginManager]
+        [osName: osName, grailsApplication: grailsApplication, pluginManager: pluginManager]
     }
 }
